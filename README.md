@@ -1,23 +1,5 @@
 # Analise-dados-Olist
 
-## Esquema de dados: (tabela <-> chave <-> tabela)
-
-O dataset é composto por 8 arquivos CSV, que contém informações sobre pedidos, produtos, vendedores, reviews, etc.
-
-![EsquemaOlist](https://i.imgur.com/HRhd2Y0.png){:height="300px" width="300px"}
-
-- **olist_orders_dataset** <-> order_id <-> **olist_order_reviews_dataset**
-- **olist_orders_dataset** <-> order_id <-> **olist_order_payments_dataset**
-- **olist_orders_dataset** <-> order_id <-> **olist_order_items_dataset**
-- **olist_orders_dataset** <-> customer_id <-> **olist_olist_customers_dataset**
-
-- **olist_order_items_dataset** <-> product_id <-> **olist_products_dataset**
-- **olist_order_items_dataset** <-> seller_id <-> **olist_sellers_dataset**
-
-- **olist_sellers_dataset** <-> zip_code_prefix <-> **olist_geolocation_dataset**
-
-- **olist_geolocation_dataset** <-> zip_code_prefix <-> **olist_order_custumer_dataset**
-
 ## Captura de dados no servidor MySQL
 
 O dataset é composto por 8 arquivos CSV, que contém informações sobre pedidos, produtos, vendedores, reviews, etc.
@@ -222,3 +204,20 @@ O dataset é composto por 8 arquivos CSV, que contém informações sobre pedido
     LINES TERMINATED BY '\n'
     IGNORE 1 ROWS;
     ```
+    ## Esquema de dados: (tabela <-> chave <-> tabela)
+
+O dataset é composto por 8 arquivos CSV, que contém informações sobre pedidos, produtos, vendedores, reviews, etc.
+
+![EsquemaOlist](https://i.imgur.com/HRhd2Y0.png)
+
+- **olist_orders_dataset** <-> order_id <-> **olist_order_reviews_dataset**
+- **olist_orders_dataset** <-> order_id <-> **olist_order_payments_dataset**
+- **olist_orders_dataset** <-> order_id <-> **olist_order_items_dataset**
+- **olist_orders_dataset** <-> customer_id <-> **olist_olist_customers_dataset**
+
+- **olist_order_items_dataset** <-> product_id <-> **olist_products_dataset**
+- **olist_order_items_dataset** <-> seller_id <-> **olist_sellers_dataset**
+
+- **olist_sellers_dataset** <-> zip_code_prefix <-> **olist_geolocation_dataset**
+
+- **olist_geolocation_dataset** <-> zip_code_prefix <-> **olist_order_custumer_dataset**
