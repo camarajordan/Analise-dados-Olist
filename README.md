@@ -4,7 +4,7 @@
 
 O dataset é composto por 8 arquivos CSV, que contém informações sobre pedidos, produtos, vendedores, reviews, etc.
 
-![EsquemaOlist](https://i.imgur.com/HRhd2Y0.png)
+![EsquemaOlist](https://i.imgur.com/HRhd2Y0.png){:height="300px" width="300px"}
 
 - **olist_orders_dataset** <-> order_id <-> **olist_order_reviews_dataset**
 - **olist_orders_dataset** <-> order_id <-> **olist_order_payments_dataset**
