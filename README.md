@@ -1,7 +1,23 @@
+## Esquema de dados: 
+
+O dataset é composto por 8 arquivos CSV, que contém informações sobre pedidos, produtos, vendedores, reviews, etc.
+
+```mermaid
+graph LR
+   A[olist_orders_dataset] -- order_id --> B[olist_order_reviews_dataset]
+   A <-- order_id --> C[olist_order_payments_dataset]
+   A <-- order_id --> D[olist_order_items_dataset]
+   D <-- product_id --> E[olist_products_dataset]
+   A <-- seller_id --> F[olist_sellers_dataset]
+   F <-- zip_code_prefix --> G[olist_geolocation_dataset] 
+   G <-- zip_code_prefix --> H[olist_order_customer_dataset]
+   H <-- customer_id --> A
+        
+
+```
 
 ## Captura de dados no servidor MySQL
 
-O dataset é composto por 8 arquivos CSV, que contém informações sobre pedidos, produtos, vendedores, reviews, etc.
 
 ### Passos:
 
@@ -203,20 +219,3 @@ O dataset é composto por 8 arquivos CSV, que contém informações sobre pedido
     LINES TERMINATED BY '\n'
     IGNORE 1 ROWS;
     ```
-    ## Esquema de dados: (tabela <-> chave <-> tabela)
-
-O dataset é composto por 8 arquivos CSV, que contém informações sobre pedidos, produtos, vendedores, reviews, etc.
-
-![EsquemaOlist](https://i.imgur.com/HRhd2Y0.png)
-
-- **olist_orders_dataset** <-> order_id <-> **olist_order_reviews_dataset**
-- **olist_orders_dataset** <-> order_id <-> **olist_order_payments_dataset**
-- **olist_orders_dataset** <-> order_id <-> **olist_order_items_dataset**
-- **olist_orders_dataset** <-> customer_id <-> **olist_olist_customers_dataset**
-
-- **olist_order_items_dataset** <-> product_id <-> **olist_products_dataset**
-- **olist_order_items_dataset** <-> seller_id <-> **olist_sellers_dataset**
-
-- **olist_sellers_dataset** <-> zip_code_prefix <-> **olist_geolocation_dataset**
-
-- **olist_geolocation_dataset** <-> zip_code_prefix <-> **olist_order_custumer_dataset**
